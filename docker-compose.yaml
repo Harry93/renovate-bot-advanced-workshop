@@ -1,0 +1,15 @@
+services:
+  renovate:
+    image: renovate/renovate:latest
+    environment:
+      RENOVATE_TOKEN: ${GITHUB_PAT}
+      GITHUB_COM_TOKEN: ${GITHUB_PAT}
+      RENOVATE_CACHE_DIR: /renovate-cache
+      RENOVATE_CONFIG_FILE: /config.js
+      LOG_LEVEL: debug
+    volumes:
+      - ./.renovate-cache:/renovate-cache
+      - ./config.js:/config.js
+      - ./renovate-entrypoint.sh:/entrypoint.sh
+    entrypoint: /entrypoint.sh
+    restart: no
