@@ -6,7 +6,7 @@ services:
       GITHUB_COM_TOKEN: ${GITHUB_PAT}
       RENOVATE_CACHE_DIR: /renovate-cache
       RENOVATE_CONFIG_FILE: /config.js
-      LOG_LEVEL: debug
+      LOG_LEVEL: "info"  # use "debug" to get a lot more log output for diagnostic purposes
     volumes:
       - ./.renovate-cache:/renovate-cache
       - ./config.js:/config.js
