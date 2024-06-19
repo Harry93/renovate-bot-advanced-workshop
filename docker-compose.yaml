@@ -1,6 +1,6 @@
 services:
   renovate:
-    image: renovate/renovate:full  # alternatively, pin the version, e.g. 37-full or 37.194-full
+    image: docker.cloudland.org/renovate/renovate:full  # alternatively, pin the version, e.g. 37-full or 37.194-full
     environment:
       RENOVATE_TOKEN: ${GITHUB_PAT}
       GITHUB_COM_TOKEN: ${GITHUB_PAT}
